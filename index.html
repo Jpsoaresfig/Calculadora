@@ -8,8 +8,6 @@
       background-color: greenyellow;
     }
 
-
-
     .calculator {
       width: 200px;
       margin: 0 auto;
@@ -85,6 +83,20 @@
         numeroatual = '';
       }
     }
+
+    document.addEventListener('keydown', function(event) {
+      const key = event.key;
+
+      if (/\d/.test(key)) {
+        appendNumber(parseInt(key));
+      } else if (['+', '-', '*', '/'].includes(key)) {
+        appendOperation(key);
+      } else if (key === 'Enter') {
+        calculateResult();
+      } else if (key === 'Backspace') {
+        clearResult();
+      }
+    });
   </script>
 </body>
 
