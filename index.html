@@ -57,22 +57,23 @@
   <script>
     let resultField = document.getElementById('result');
     let numeroatual = '';
-
+    
+    //função para selecionar o número e armazenar em uma váriavel
     function appendNumber(number) {
       numeroatual += number;
       resultField.value = numeroatual;
     }
-
+    //seleção de operador
     function appendOperation(operation) {
       numeroatual += operation;
       resultField.value = numeroatual;
     }
-
+    //limpar tela
     function clearResult() {
       numeroatual = '';
       resultField.value = '';
     }
-
+    //calculo do resultado
     function calculateResult() {
       try {
         let result = eval(numeroatual);
@@ -83,7 +84,7 @@
         numeroatual = '';
       }
     }
-
+    //função para utilização do teclado
     document.addEventListener('keydown', function(event) {
       const key = event.key;
 
